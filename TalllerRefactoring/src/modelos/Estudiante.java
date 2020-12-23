@@ -78,13 +78,13 @@ public class Estudiante{
         this.telefono = telefono;
     }
     
-    //Calcula y devuelve la nota del parcial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
-    public double CalcularNotaParcial(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
+    public double CalcularNotaParcial(CalificacionMaterial cal){
         double nota=0;
         for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
+            if(cal.getParalelo().equals(par)){
+                double notaTeorico=(cal.getNexamen()+cal.getNdeberes()+cal.getNlecciones())*0.80;
+                double notaPractico=(cal.getNtalleres())*0.20;
                 nota=notaTeorico+notaPractico;
             }
         }
