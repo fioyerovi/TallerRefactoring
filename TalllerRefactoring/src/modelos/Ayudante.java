@@ -9,22 +9,12 @@ public class Ayudante {
     Ayudante(Estudiante e){
     	est = e;
     }
-    public String getMatricula() {
-        return est.getMatricula();
+
+    //retorna el estudiante para que implemente los metodos de estudiante
+    public Estudiante getAyudante(){
+        return est;
     }
 
-    public void setMatricula(String matricula) {
-        est.setMatricula(matricula);
-    }
-
-    //Getters y setters se delegan en objeto estudiante para no duplicar código
-    public String getNombre() {
-        return est.getNombre();
-    }
-
-    public String getApellido() {
-        return est.getApellido();
-    }
 
     //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos
 
